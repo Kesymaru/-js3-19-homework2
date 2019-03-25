@@ -1,0 +1,83 @@
+html, body {
+    height: 100%;
+}
+
+#controls i {
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+select {
+    display: inline-block;
+    position: relative;
+    height: 30px;
+}
+
+nav li.selected {
+    background-color: rgba(0,0,0,.5);
+}
+
+section {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    background: cyan;
+}
+
+table {
+    background-color: white;
+}
+
+table th,
+table td {
+    min-width: 50px;
+    border: 1px solid rgba(0,0,0,0.12);
+    padding: 0;
+}
+
+table th {
+    text-align: center;
+    cursor: pointer;
+}
+
+table td {
+    min-width: 25px;
+}
+
+table td.selected-cell {
+    border-color: rgba(0,0,0,0.5);
+    background-color: cyan;
+}
+
+table th.selected-row,
+table td.selected-row {
+    background-color: cyan;
+}
+
+table th.selected-col,
+table td.selected-col {
+    background-color: cyan;
+}
+
+table tfoot th {
+    text-align: left;
+}
+
+.menu {
+    background-color: white;
+    padding: 0;
+    position: absolute;
+    width: 200px;
+    border: 1px solid rgba(0,0,0,0.5);
+}
+
+.menu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background-color: cyan;
+}

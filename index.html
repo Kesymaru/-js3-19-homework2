@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matrix</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/css/main.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    <div class="navbar-fixed">
+        <nav class="cyan">
+            <div class="nav-wrapper">
+                <ul class="left" id="controls">
+                    <li>
+                        <i data-style="font-weight" data-value="bold" class="material-icons center">format_bold</i>
+                    </li>
+                    <li>
+                        <i data-style="font-style" data-value="italic" class="material-icons center">format_italic</i>
+                    </li>
+                    <li>
+                        <i data-style="text-align" data-value="left" class="material-icons">format_align_left</i>
+                    </li>
+                    <li>
+                        <i data-style="text-align" data-value="center" class="material-icons">format_align_center</i>
+                    </li>
+                    <li>
+                        <i data-style="text-align" data-value="right" class="material-icons">format_align_right</i>
+                    </li>
+                    <li>
+                        <select>
+                            <option value=""></option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <section></section>
+
+    <script src="src/js/mediator.js"></script>
+    <script src="src/js/singleton.js"></script>
+    <script src="table.js"></script>
+    <script src="matriz.js"></script>
+</body>
+</html>
