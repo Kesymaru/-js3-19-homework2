@@ -56,15 +56,23 @@ const Singleton = (function () {
             return DATA;
         }
 
+        /**
+         * Add a new row
+         */
         addRow () {
             let index = DATA.length;
-            let row = createArray(DATA[0].length).map(c => DEFAULT_VALUE())
+            let row = createArray(DATA[0].length).map(c => DEFAULT_VALUE());
             DATA.push(row);
 
             this.updateStorage();
             Mediator.Publish(Singleton.Subscriptions.ROW_ADDED, {index, value: row});
         }
 
+        /**
+         * Remove a row
+         * @param index
+         * @returns {boolean}
+         */
         removeRow (index) {
             if(index <= -1) return false;
 
@@ -75,6 +83,11 @@ const Singleton = (function () {
             Mediator.Publish(Singleton.Subscriptions.ROW_REMOVED, {index});
         }
 
+        /**
+         * Add a new column
+         * @param {object} value
+         * @returns {*}
+         */
         addColumn (value = DEFAULT_VALUE()) {
             let index = DATA[0].length;
             DATA = DATA.map(row => {
@@ -102,6 +115,13 @@ const Singleton = (function () {
             Mediator.Publish(Singleton.Subscriptions.COLUMN_REMOVED, {index});
         }
 
+        /**
+         * Updates a column
+         * @param {array} coords
+         * @param {string} value
+         * @param {string} style
+         * @returns {boolean}
+         */
         updateColumn (coords, value, style) {
             if(!Array.isArray(coords)) return false;
             DATA[coords[0]][coords[1]].value = value;
@@ -113,6 +133,9 @@ const Singleton = (function () {
             return true;
         }
 
+        /**
+         * Method to sync the data with the localstorage
+         */
         updateStorage () {
             try {
                 let json = JSON.stringify(DATA);
@@ -122,6 +145,9 @@ const Singleton = (function () {
             }
         }
 
+        /**
+         * Method to the the saved data on the localstorage
+         */
         getStorage () {
             try {
                 let data = localStorage.getItem(PREFIX);
