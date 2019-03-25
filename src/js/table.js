@@ -204,7 +204,6 @@ const Table = (function () {
          */
         selectCell (event, element = null) {
             let td = element ? element : event.target;
-            console.log('select cell', td);
 
             if(td.tagName !== 'TD') return false;
 
@@ -224,7 +223,6 @@ const Table = (function () {
          * @returns {boolean}
          */
         editCell (event, element = null) {
-            console.log('edit cell', event, element);
             let td = element ? element : event.target;
 
             if(td.tagName !== 'TD') return false;
@@ -352,7 +350,6 @@ const Table = (function () {
             this.matriz.data.forEach((r, rowIndex) => {
                 let columnIndex = data.index;
                 columns.forEach(index => {
-                    console.log('col', rowIndex, index, ' => ', rowIndex, columnIndex);
                     let td = this.tbody.querySelector(`td[data-cell="${rowIndex}:${index}"]`);
                     if(index === data.index) return td.parentNode.removeChild(td);
                     td.setAttribute('data-cell', `${rowIndex}:${columnIndex}`);
@@ -611,7 +608,6 @@ const Table = (function () {
         }
 
         style (key, value) {
-            console.log('style', key, value);
             if(!this.selectedCell || !key || !value) return false;
 
             // toogle the style
