@@ -94,7 +94,6 @@ const Singleton = (function () {
          */
         removeColumn (index) {
             if(index <= -1) return false;
-            console.log('data remove column', index);
 
             // remove the column on each row
             DATA.forEach(row => row.splice(index, 1));
@@ -104,8 +103,6 @@ const Singleton = (function () {
         }
 
         updateColumn (coords, value, style) {
-            console.log('update column', coords, value);
-
             if(!Array.isArray(coords)) return false;
             DATA[coords[0]][coords[1]].value = value;
             DATA[coords[0]][coords[1]].style = style;
